@@ -1,3 +1,4 @@
+
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
 	# INSTRUCTIONS
@@ -35,12 +36,16 @@
 
 	# What was the name of the function we have seen to check the length of a container?  Use your CLI to access the Python documentation and get help(len).
 
+
+
 def one(input1, input2):
 	length = len(input1)
 	if len(input2) > length:
 		return input2
 	elif len(input2) == length:
-		return f"{input1}, {input2}"
+		return f"{input1} {input2}"
+	else:
+		return input1
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -64,7 +69,16 @@ def one(input1, input2):
 	# No hints for this question
 
 def two(arg1):
-	return "null"
+	if arg1%3 == 0 and arg1%5 > 0:
+		return "fizz"
+	elif arg1%5 == 0 and arg1%3 > 0:
+		return "buzz"
+	elif arg1%3 == 0 and arg1%5 == 0:
+		return "fizzbuzz"
+	else:
+		return "null"
+
+
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -112,7 +126,15 @@ def three(input):
 
 
 def four(input):
-    return False
+	check = "cei"
+	check2 = "cie"
+	if "c" not in input and "ei" not in input:
+		return True
+	elif check in input and check2 not in input:
+		return True
+	else:
+		return False
+	
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -130,9 +152,17 @@ def four(input):
 	# <HINT>
 
 	# You may need to create a list of numbers from 0 to i, take a look at help(range).
+import math
 
 def five(input):
-	return 1
+	loop = 1
+	l1 = []
+	while loop <= input:
+		l1.append(loop)
+		loop += 1
+	total = math.prod(l1)
+	return total
+
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -154,14 +184,14 @@ def five(input):
 	# How do we find the length of a container, take a look at help(len), you will also need to look at help(str) for String manipulation.
  
 def six(string, int, char):
-	i = int
-	if string[i - 1].lower() == char:
+	str = string.lower()
+	x = str.find(char)
+	pos = x + 1
+	if pos == int:
 		return True
 	else:
 		return False
-
-print(six("Kieran", 1, "k"))
-
+	
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
 	# <QUESTION 7>
@@ -183,7 +213,15 @@ print(six("Kieran", 1, "k"))
 	# Take a look at the documentation for Strings, List and range.
 
 def seven(inputString, char):
-	return -1
+	string = inputString.replace(" ", "")
+	pos = string.find(char)
+	x = pos + 1 
+	if x == 0:
+		return -1
+	else:
+		return x
+
+print(seven("fridge", "z"))
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
