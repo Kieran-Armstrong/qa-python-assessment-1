@@ -36,7 +36,11 @@
 	# What was the name of the function we have seen to check the length of a container?  Use your CLI to access the Python documentation and get help(len).
 
 def one(input1, input2):
-	return ""
+	length = len(input1)
+	if len(input2) > length:
+		return input2
+	elif len(input2) == length:
+		return f"{input1}, {input2}"
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -79,7 +83,13 @@ def two(arg1):
 	# How do we ignore case in a String? help(str) may offer some insight.
 
 def three(input):
-    return 0
+	noVowels = 0
+	vowels = ["a", "e", "i", "o", "u"]
+	for char in input.lower():
+		if char in vowels:
+			noVowels += 1
+	return noVowels
+
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -144,7 +154,13 @@ def five(input):
 	# How do we find the length of a container, take a look at help(len), you will also need to look at help(str) for String manipulation.
  
 def six(string, int, char):
-	return False
+	i = int
+	if string[i - 1].lower() == char:
+		return True
+	else:
+		return False
+
+print(six("Kieran", 1, "k"))
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
