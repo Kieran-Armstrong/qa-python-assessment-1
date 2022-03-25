@@ -152,6 +152,7 @@ def four(input):
 	# <HINT>
 
 	# You may need to create a list of numbers from 0 to i, take a look at help(range).
+from difflib import Match
 import math
 
 def five(input):
@@ -248,7 +249,14 @@ print(seven("fridge", "z"))
 	# help(int) for working with numbers and help(str) for working with Strings.
 
 def eight(arg1):
-	return 0
+	string = arg1.split()
+	sum = 0
+	for word in string:
+		for digit in str(word):
+			sum += int(digit)
+	return sum
+
+print(eight("55 72 86"))
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -274,8 +282,16 @@ def eight(arg1):
 	
 	# Use your CLI to access the Python documentation and get help manipulating strings - help(str).
 
+import re
+
 def nine(input):
-	return ""
+	inp = input.lower()
+	string = re.search("bert(.*)bert", inp)
+	if string == None:
+		return ""
+	else:
+		result = string.group(1)
+		return result
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
